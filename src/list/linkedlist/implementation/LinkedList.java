@@ -43,12 +43,10 @@ public class LinkedList {
             newNode.next = node.next;
             node.next = newNode;
             size++;
-            if(newNode.next == null){
+            if (newNode.next == null) {
                 tail = newNode;
             }
         }
-
-
     }
 
     private class Node {
@@ -64,5 +62,26 @@ public class LinkedList {
         public String toString() {
             return String.valueOf(this.data);
         }
+    }
+
+    @Override
+    public String toString() {
+        if (head == null) {
+            return "[]";
+        } else {
+
+            Node temp = head;
+
+            String str = "[";
+
+            while (temp.next != null) {
+                str += temp.data + ", ";
+                temp = temp.next;
+            }
+            str += temp.data;
+
+            return str + "]";
+        }
+
     }
 }
