@@ -26,12 +26,29 @@ public class LinkedList {
         }
     }
 
-    private Node node(int index){
+    private Node node(int index) {
         Node x = head;
         for (int i = 0; i < index; i++) {
             x = x.next;
         }
         return x;
+    }
+
+    public void add(int index, Object element) {
+        if (index == 0) {
+            addFirst(index);
+        } else {
+            Node newNode = new Node(element);
+            Node node = node(index - 1);
+            newNode.next = node.next;
+            node.next = newNode;
+            size++;
+            if(newNode.next == null){
+                tail = newNode;
+            }
+        }
+
+
     }
 
     private class Node {
