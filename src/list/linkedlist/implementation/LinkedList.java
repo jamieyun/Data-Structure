@@ -26,6 +26,14 @@ public class LinkedList {
         }
     }
 
+    private Node node(int index){
+        Node x = head;
+        for (int i = 0; i < index; i++) {
+            x = x.next;
+        }
+        return x;
+    }
+
     private class Node {
         private Object data;
         private Node next;
