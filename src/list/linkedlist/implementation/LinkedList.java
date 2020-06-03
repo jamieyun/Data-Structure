@@ -157,5 +157,9 @@ public class LinkedList {
             nextIndex++;
             return lastReturned;
         }
+
+        public boolean hasNext() {
+            return nextIndex < size();
+        }
     }
 }
