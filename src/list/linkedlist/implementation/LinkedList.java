@@ -94,11 +94,15 @@ public class LinkedList {
         while (temp.data != element) {
             temp = temp.next;
             index++;
-            if (temp == null){
+            if (temp == null) {
                 return -1;
             }
         }
         return index;
+    }
+
+    public ListIterator listIterator() {
+        return new ListIterator();
     }
 
     private class Node {
@@ -135,5 +139,23 @@ public class LinkedList {
             return str + "]";
         }
 
+    }
+
+    public class ListIterator {
+
+        private Node next;
+        private Node lastReturned;
+        private int nextIndex;
+
+        public ListIterator() {
+            next = head;
+        }
+
+        public Object next() {
+            lastReturned = next;
+            next = next.next;
+            nextIndex++;
+            return lastReturned;
+        }
     }
 }
