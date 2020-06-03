@@ -12,7 +12,8 @@ public class Main {
 //        System.out.println(numbers.remove(1));
         System.out.println(numbers.removeLast());
 //        System.out.println(numbers.removeFirst());
-        System.out.println("numbers = " + numbers.size());
-        System.out.println("numbers = " + numbers.get(2));
+//        System.out.println("numbers = " + numbers.size());
+//        System.out.println("numbers = " + numbers.get(2));
+        System.out.println("numbers.indexOf(10) = " + numbers.indexOf(40));
     }
 }
