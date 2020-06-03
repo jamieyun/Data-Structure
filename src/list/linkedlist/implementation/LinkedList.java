@@ -10,8 +10,19 @@ public class LinkedList {
         newNode.next = head;
         head = newNode;
         size++;
-        if(head.next == null){
+        if (head.next == null) {
             tail = head;
+        }
+    }
+
+    public void addLast(Object element) {
+        Node newNode = new Node(element);
+        if (size == 0) {
+            addFirst(element);
+        } else {
+            tail.next = newNode;
+            tail = newNode;
+            size++;
         }
     }
 
