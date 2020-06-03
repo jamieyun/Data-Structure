@@ -79,6 +79,15 @@ public class LinkedList {
         return remove(size - 1);
     }
 
+    public int size() {
+        return size;
+    }
+
+    public Object get(int index) {
+        Node temp = node(index);
+        return temp.data;
+    }
+
     private class Node {
         private Object data;
         private Node next;
