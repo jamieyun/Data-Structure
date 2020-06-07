@@ -36,7 +36,7 @@ public class LinkedList {
 
     public void add(int index, Object element) {
         if (index == 0) {
-            addFirst(index);
+            addFirst(element);
         } else {
             Node newNode = new Node(element);
             Node node = node(index - 1);
@@ -160,6 +160,30 @@ public class LinkedList {
 
         public boolean hasNext() {
             return nextIndex < size();
+        }
+
+        public void add(Object element) {
+//            LinkedList.this.add(nextIndex++, element);
+            /* add(5) first
+            Node newNode = new Node(element);
+            head = newNode;
+            newNode.next = next;
+
+            lastReturned = newNode;
+            nextIndex++;
+            size++;*/
+
+            Node newNode = new Node(element);
+            if(lastReturned == null) {
+                head = newNode;
+                newNode.next = next;
+            }else {
+                lastReturned.next = newNode;
+                newNode.next = next;
+            }
+            lastReturned = newNode;
+            nextIndex++;
+            size++;
         }
     }
 }

@@ -15,9 +15,13 @@ public class Main {
 //        System.out.println("numbers.indexOf(10) = " + numbers.indexOf(40));
 
         LinkedList.ListIterator it = numbers.listIterator();
-        while (it.hasNext()){
+        it.add(5);
+        System.out.println(it.next());
+        it.add(15);
+        System.out.println("numbers = " + numbers);
+        /*while (it.hasNext()) {
             System.out.println(it.next());
-        }
+        }*/
 //        it.hasNext();
     }
 }
